@@ -1,0 +1,61 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Aligns items vertically centered */
+  padding: 10px 20px; /* Adds padding around the nav for spacing */
+}
+
+nav h2 {
+  font-size: 40px;
+  color: blueviolet;
+  margin: 0;
+  padding-right: 35px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+nav ul li {
+  list-style: none;
+  padding-left: 0px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding-left: 10px;
+  color: blueviolet;
+  font-size: 20px;
+}
+
+nav .search {
+  flex: 1;
+  display: flex;
+  align-items: center; /* Aligns items vertically centered */
+  margin: 0 15px; /* Adds horizontal margins */
+  border-radius: 7px;
+}
+
+nav input {
+  flex: 1;
+  height: 30px; /* Ensures consistent height with the button */
+  border: 1px solid blueviolet;
+  border-radius: 4px 0 0 4px; /* Rounds the left corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding shadow to the input */
+  padding: 5px 10px; /* Adds padding inside the input */
+  margin: 0; /* Removes extra margin */
+}
+
+.search button {
+  height: 41.7px; /* Matches the input height */
+  border: 1px solid blueviolet;
+  border-left: none; /* Removes the left border to connect with the input */
+  border-radius: 0 4px 4px 0; /* Rounds the right corners */
+  background-color: white; /* Adds background color to match the input */
+  color: blueviolet;
+  cursor: pointer; /* Changes cursor to pointer */
+  padding: 0 15px; /* Adds horizontal padding inside the button */
+}
