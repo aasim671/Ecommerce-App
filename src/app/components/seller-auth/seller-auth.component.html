@@ -7,7 +7,7 @@
       <input class="form-input" ngModel type="email" name="email" id="email" placeholder="Enter email.">
       <input class="form-input" ngModel type="password" name="password" id="password" placeholder="Enter password.">
       <button class="form-button">Sign Up</button>
-      <p>Already have account <a (click)="showSignUp()">Login here.</a></p>
+      <p>Already have account? <a (click)="showSignUp()">Login here.</a></p>
     </form>
   </div>
 </div>
@@ -17,12 +17,13 @@
 
   <div class="sign-up">
     <h1>Seller Login</h1>
+    <p>{{errorMessage}}</p>
     <form class="common-form" #form="ngForm" (ngSubmit)="login(form.value)">
 
       <input class="form-input" ngModel type="email" name="email" id="email" placeholder="Enter email.">
       <input class="form-input" ngModel type="password" name="password" id="password" placeholder="Enter password.">
       <button class="form-button">Login</button>
-      <p>New user <a (click)="showLogin()">Sign up here.</a></p>
+      <p>New user? <a (click)="showLogin()">Sign up here.</a></p>
     </form>
   </div>
 </div>

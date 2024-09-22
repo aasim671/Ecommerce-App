@@ -15,13 +15,21 @@ export class SellerAuthComponent {
 
   constructor(private seller: SellerService, private router: Router) { }
   showdata = false;
+  errorMessage:string=''
   signUp(data: object) {
     this.seller.signUp(data);
 
   }
 
   login(data: object) {
-    console.log(data)
+    this.seller.login(data);
+    this.seller.error.subscribe((error)=>{
+      if(error){
+        this.errorMessage ="Credintionals Are Not Correct."
+      }
+
+
+    })
   }
 
   ngOnInit() {

@@ -10,6 +10,12 @@ nav h2 {
   color: blueviolet;
   margin: 0;
   padding-right: 35px;
+
+
+}
+
+nav h2 a{
+  text-decoration: none;
 }
 
 nav ul {

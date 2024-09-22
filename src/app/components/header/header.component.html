@@ -1,15 +1,23 @@
 <nav>
-  <h2>MR ALL</h2>
-  <div class="search">
+  <h2><a href="/home">MR ALL</a></h2>
+  <div class="search" *ngIf="menu==='default'">
     <input type="text" name="search" id="search">
     <button>search</button>
   </div>
 
-  <ul>
+  <ul *ngIf="menu==='default'">
     <li><a href="/home">Home</a></li>
     <li><a href="/seller">Seller</a></li>
     <li><a routerLink="/login">Login</a></li>
     <li><a routerLink="/cart">Cart(0)</a></li>
+  </ul>
+
+
+  <ul *ngIf="menu==='seller'">
+    <li><a href="/home">Product List</a></li>
+    <li><a href="/seller">Add Product</a></li>
+    <li><a routerLink="/login">LogOut</a></li>
+    <li><a routerLink="/cart">Seller Name</a></li>
   </ul>
 
 
