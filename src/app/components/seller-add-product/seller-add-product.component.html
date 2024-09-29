@@ -1,0 +1,11 @@
+<div>
+    <p style="text-align: center;">{{message}}</p>
+    <h1>Add New Product</h1>
+    <form class="common-form" #form="ngForm" (ngSubmit)="adddata(form.value)">
+        <input class="form-input" ngModel type="text" name="name" id="name" placeholder="Enter Product Name">
+        <input class="form-input" ngModel type="number" name="price" id="price" placeholder="Enter Product Price">
+       <textarea name="description" ngModel placeholder="Enter Product Description"></textarea>
+       <input class="form-input" ngModel name="url" placeholder="Enter Product Image URL"> 
+       <button class="form-button"> Add Product</button>
+      </form>
+</div>

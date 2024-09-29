@@ -5,13 +5,11 @@ nav {
   padding: 10px 20px; /* Adds padding around the nav for spacing */
 }
 
-nav h2 {
+nav h2 a {
   font-size: 40px;
   color: blueviolet;
   margin: 0;
   padding-right: 35px;
-
-
 }
 
 nav h2 a{
