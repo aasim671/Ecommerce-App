@@ -14,15 +14,26 @@ export class SellerService {
   constructor(private http: HttpClient, private router: Router) { }
 
   signUp(data: any) {
-    return this.http.post(`http://localhost:3000/seller`, data, { observe: 'response' }).subscribe(
+    this.http.post(`http://localhost:3000/seller`, data, { observe: 'response' }).subscribe(
       (result) => {
-        this.isLoggedIn.next(true);
-        localStorage.setItem('seller', JSON.stringify(result.body));
-        this.router.navigate(['sellerhome'])
-      }
-    )
+        if (result.body) {
+          this.isLoggedIn.next(true);
+          localStorage.setItem('seller', JSON.stringify(result.body));
+          console.log('Data stored in localStorage:', JSON.stringify(result.body));
 
+          this.router.navigate(['sellerhome']);
+        } else {
+          // Handle the case where the response body is empty
+          console.error('No data received from signup API.');
+        }
+      },
+      (error) => {
+        console.error('Signup error:', error);
+      }
+    );
   }
+  
+  
 
   login(data: any) {
     this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`, { observe: 'response' }).subscribe(
@@ -39,7 +50,7 @@ export class SellerService {
   reaload() {
     if (localStorage.getItem('seller')) {
       this.isLoggedIn.next(true);
-      this.router.navigate(['sellerhome'])
+      this.router.navigate(['sellerhome']);
     }
   }
 
